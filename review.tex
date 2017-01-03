@@ -4,6 +4,38 @@
 \usepackage{graphicx}
 
 
+%%%%%
+% variable to include comments or not in the compilation ; set to 1 to include
+\def \draft {1}
+
+
+% writing utilities
+
+% comments and responses
+%  -> use this comment to ask questions on what other wrote/answer questions with optional arguments (up to 4 answers)
+\usepackage{xparse}
+\usepackage{ifthen}
+\DeclareDocumentCommand{\comment}{m o o o o}
+{\ifthenelse{\draft=1}{
+    \textcolor{red}{\textbf{C : }#1}
+    \IfValueT{#2}{\textcolor{blue}{\textbf{A1 : }#2}}
+    \IfValueT{#3}{\textcolor{ForestGreen}{\textbf{A2 : }#3}}
+    \IfValueT{#4}{\textcolor{red!50!blue}{\textbf{A3 : }#4}}
+    \IfValueT{#5}{\textcolor{Aquamarine}{\textbf{A4 : }#5}}
+ }{}
+}
+
+
+% todo
+\newcommand{\todo}[1]{
+\ifthenelse{\draft=1}{\textcolor{red!50!blue}{\textbf{TODO : \textit{#1}}}}{}
+}
+
+
+
+
+
+
 \title{An Interdisciplinary Approach to Morphogenesis}
 % alternative epic title : Morphogenesis : a Tale of Life and Death
 
@@ -126,9 +158,8 @@ The patterns of an ant nest are the result of ``the morphogenesis of an extended
 %%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{other}
 
-% (Juste) I saw this paper the other day, dealing with identification of signalling processes for the morphogenesis of the heart (if I understand well, they identify proteines driving the process) -> the notion is applied to an organ only, maybe it is an interesting example to show the different scopes.
+\comment{(Juste) I saw this paper the other day, dealing with identification of signalling processes for the morphogenesis of the heart (if I understand well, they identify proteines driving the process) -> the notion is applied to an organ only, maybe it is an interesting example to show the different scopes.}[(Lars) Cool paper! As you noted, they mainly talk about the biochemical signaling involved, not about how the actual shape of the tissue comes about. We should figure out whether this shape thing has been studied previously. This would be another nice example of how forces/geometric constraints and signaling determine size and shape and function of a body unit.]
 
-% (Lars) Cool paper! As you noted, they mainly talk about the biochemical signaling involved, not about how the actual shape of the tissue comes about. We should figure out whether this shape thing has been studied previously. This would be another nice example of how forces/geometric constraints and signaling determine size and shape and function of a body unit.
 \cite{han2016coordinating}
 
 
