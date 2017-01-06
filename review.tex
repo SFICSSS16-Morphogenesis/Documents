@@ -7,7 +7,7 @@
 %%%%%
 % variable to include comments or not in the compilation ; set to 1 to include
 %\def \draft {1}
-\def \draft {0}
+\def \draft {1}
 
 
 % writing utilities
@@ -41,15 +41,15 @@
 
 
 
-\author[1]{Chenling Antelope}
+\author[1]{Chenling Xu Antelope}
 \author[2]{Lars Hubatsch}
 \author[3,4]{Juste Raimbault}
 \author[5]{Jesus Mario Serna}
 
 
 
-\affil[1]{Affiliation, department, city, postcode, country}
-\affil[2]{Affiliation, department, city, postcode, country}
+\affil[1]{University of California, Berkeley, US}
+\affil[2]{The Francis Crick Institute, London, UK}
 \affil[3]{UMR CNRS 8504 G{\'e}ographie-cit{\'e}s, Paris, France}
 \affil[4]{UMR-T 9403 IFSTTAR LVMT, Champs-sur-Marne, France}
 \affil[5]{Affiliation, department, city, postcode, country}
@@ -92,7 +92,7 @@ The notion of morphogenesis seems to play an important role in the study of a br
 %%%%%%%%%%%%%%%%%%%%%%%
 \section*{Introduction}
 
-At every historical period, people use the main technological advance as a metaphor to explain other phenomenon in nature. First, nature was mechanical, then electrical, and now, computational. Here we suggest that taking an alternative metaphor might allow us to better study some properties of a system, and study how the concept of morphogenesis that originated in the study of developmental biology, can be used across systems. Morphogenesis is a very powerful metaphor that is distinct from the previous three that have been very popular in history. Unlike the mechanical, electrical or computational explanations of nature, morphogenesis is not a human designed process. Morphogenesis emphasize the role of change and growth, rather than a static state. "... natural history deals with ephemeral and accidental, not eternal nor universal things ..." \cite{thompson1942growth} The goal of this paper is to study 1. the definition of the word morphogenesis in different fields. 2. fields that use similar approaches and concepts that embodies the notion of morphogenesis but does not use the word morphogenesis. 3. if approaches to study morphogenesis can be applied across different fields. A similar effort is described in~\cite{bourgine2010morphogenesis}, but it consists more on a collection of viewpoints from subjects that can be related to morphogenesis rather than an epistemological reconstruction of the notion as we propose to do. Furthermore, examples are far from exhausted and our review is thus complementary.
+At \comment{Lars: I think 'during' would be better?} every historical period, people use the main technological advance as a metaphor to explain other phenomenon in nature. First, nature was mechanical, then electrical, and now, computational. Here we suggest that taking an alternative metaphor might allow us to better study some properties of a system, and study how the concept of morphogenesis that originated in the study of developmental biology, can be used across systems. Morphogenesis is a very powerful metaphor that is distinct from the previous three that have been very popular in history. Unlike the mechanical, electrical or computational explanations of nature, morphogenesis is not a human designed process. Morphogenesis emphasizes the role of change and growth, rather than a static state. "... natural history deals with ephemeral and accidental, not eternal nor universal things ..." \cite{thompson1942growth} The goal of this paper is to study 1. the definition of the word morphogenesis in different fields. 2. fields that use similar approaches and concepts that embodies the notion of morphogenesis but does not use the word morphogenesis. 3. if approaches to study morphogenesis can be applied across different fields. A similar effort is described in~\cite{bourgine2010morphogenesis}, but it consists more on a collection of viewpoints from subjects that can be related to morphogenesis rather than an epistemological reconstruction of the notion as we propose to do. Furthermore, examples are far from exhausted and our review is thus complementary.
 
 The rest of this paper is organized as follows : we provide first a compartmentalized review of the notion of morphogenesis across various fields, ranging from biology to social sciences, psychology and territorial sciences. A synthesis is then made and a framework as general as possible proposed. We finally discuss further developments and potential application of this epistemological analysis.
 
@@ -110,7 +110,7 @@ The rest of this paper is organized as follows : we provide first a compartmenta
 % Rough order: 
 % 1. General definition of morphogenesis in dev bio., patterning vs forces 
 % 2. Biochemical patterning: 
-%	a) Reaction diffusion as an example for patterning. 
+%	a) Reaction-diffusion as an example for patterning. 
 % 	b) french flag model
 % 3. Forces as drivers of cell and tissue shapes
 % 4. Examples: 
@@ -121,37 +121,41 @@ The rest of this paper is organized as follows : we provide first a compartmenta
 %
 %Organoids: we can reproduce a great deal of morphogenesis, but still don't understand everything, Sato&Clevers
 \subsection*{Developmental Biology}
-\subsubsection*{Notion of morphogenesis in biology}
 %Some founders of the field: D'Arcy Thompson (On Growth and Form, 1917) Turing (1952)
 %Special issue in Science: http://www.sciencemag.org/site/special/morph/index.xhtml
 % First in depth application of this theory to biology by Gierer&Meinhardt Kybernetik (1972),
 
+In developmental biology, morphogenesis refers to the mechanisms of how an organism acquires its shape and different functional units starting from only one cell. Generally, these mechanisms need to work reliably in order to guarantee similar outcomes for every individual. This often requires cells to know their position relative to some reference frame, in order to differentiate (a term used to describe how cells acquire a specific fate, becoming, say, skin cells, as opposed to neurons) or decide whether or not to divide (which is necessary for growth). The following section describes models that have been applied in developmental biology.
+Afterwards, we briefly describe how positional information and physical forces (created by biochemical reactions), can play together to determine the shape of tissues, organs and whole organisms. Finally, we will use the development of the nematode worm \textit{C. elegans} as an example for a comparatively well studied system - yet, with many open questions to address.
 
-The general concept behind this first approach is how is information transduced, how does this information then become translated into forces in order to create changes in shape and function of the developing organism.
+\subsubsection*{Reaction-Diffusion mechanisms}
+Alan Turing used the term reaction-diffusion system in his seminal 1952 paper 'The Chemical Basis of Morphogenesis' to describe simple patterning in a (theoretical) ring of cells. Even though this work is now considered one of the most fundamental contributions to the field of pattern formation, it took many years until his work started getting recognition as an actual model for biological systems. Gierer\&Meinhardt \cite{gierer1972theory} then suggested using similar models also for intracellular polarity - a ubiquitous phenomenon in biology in which a cell establishes and maintains two different regions within itself - an important capability of most cell types. 
+One example of the emergence of patterns from homogeneous background are reaction-diffusion systems. Using this framework we can recapitulate many pattern formation mechanisms in development, such as coloration, segmentation, establishment and maintenance of cell polarity. These larger scale patterns are generated by the interaction of a few species of chemicals. Every chemical species also undergoes diffusion, production and degradation. Thus it is possible to represent this model using a system of partial differential equations, and certain parameters will generate stable patterns from homogeneous initial condition, where random perturbation is amplified by the system. In this model, very complex patterns can be formed with only a few species of molecules\cite{kondo2010reaction}. One of the most studied reaction-diffusion model capable of producing stable patterns comprises of two types of molecules, one activator and one repressor. The difference in diffusion rate between the two molecules is what amplifies random noise in the system.\cite{gierer1972theory}
 
+The most well-studied reaction-diffusion system explaining coloration is in zebrafish. Cells called melanophores and xanthophores produce black and yellow pigments respectively.\cite{nakamasu2009interactions} The interaction of melanophores and xanthophores produces the striped pattern on zebrafish. Melanophore growth is promoted by long-distance interaction with xanthophores. Short distance interactions between the two cell types inhibit each other.
 
-\subsubsection*{Reaction-Diffusion mechanisms} 
-
-
-One example of the emergence of patterns from homogeneous background are reaction diffusion systems. Using this framework we can recapitulate many pattern formation mechanisms in development, such as coloration, segmentation, establishment and maintenance of cell polarity. These larger scale patterns are generated by the interaction of a few species of chemicals. Every chemical species also undergoes diffusion, production and degradation. Thus it is possible to represent this model using a system of partial differential equations, and certain parameters will generate stable patterns from homogeneous initial condition, where random perturbation is amplified by the system. In this model, very complex patterns can be formed with only a few species of molecules\cite{kondo2010reaction}. One of the most studied reaction diffusion model capable of producing stable patterns comprises of two types of molecules, one activator and one repressor. The difference in diffusion rate between the two molecules is what amplifies random noise in the system.\cite{gierer1972theory}
-
-The most well-studied reaction diffusion system explaining coloration is in zebrafish. Cells called melanophores and xanthophores produce black and yellow pigments respectively.\cite{nakamasu2009interactions} The interaction of melanophores and xanthophores produces the striped pattern on zebrafish. Melanophore growth is promoted by long-distance interaction with xanthophores. Short distance interactions between the two cell types inhibit each other.
-
-Polarity formation in yeast division can also be explained by the reaction diffusion process of Cdc42. Cdc42 has two forms, one active membrane bound and one inactive cytoplasmic.  \cite{goryachev2008dynamics}
+Polarity formation in yeast division can also be explained by the reaction-diffusion process of Cdc42. Cdc42 has two forms, one active membrane bound and one inactive cytoplasmic.  \cite{goryachev2008dynamics}
 
 Segmentation usually involves a more complex system than the two previously discussed example, because the pattern it generates needs to be robust to ensure the correct function, and thus cannot be sensitive to variation in initial conditions. 
 
-
-Evolution has also produced reaction-diffusion processes that 
 \subsubsection*{The French Flag Model}
+Similar to the reaction-diffusion framework the French Flag Model was initially conceived to explain differentiation of cells in a regular fashion - for example stripes of cells within a tissue developing different fates. Similar to a French flag, which has three differently colored stripes, cells within a tissue where thought to assume different fates if they sense different amounts of a certain protein - generically called a morphogen. The only necessity for this to work is a graded concentration of the morphogen. This can be achieved if the morphogen is only produced locally and then diffuses across the tissue, away from the source. In order to achieve a stable gradient, on top of local protein production the system also needs either long range inhibition, a sink opposite the source, or a degradation mechanism within the tissue (reviewed in cite{wolpert2011}).
+
+Once the gradient is set up, the morphogen concentration needs to be translated 
+To the author's knowledge there is no single well understood system, but there is evidence at least on a coarse grain level cite{wolpert2011}
+Precise measurements of molecular mobilities as well as production and decay rates are necessary, hard to obtain, fluorescent tags change behavior.
+There is a lot of redundancy (no ragged boundaries!).
+% Mention T.Gregor papers!
 \subsection*{Forces as drivers of cell and tissue shape}
-\subsection*{Examples}
-\subsubsection*{C. elegans}
+Epithelial rearrangements are driven either by external forces (seemingly fluid behavior) or driven from within the tissue by divisions, death/extrusion or intercalation \cite{Guillot2013}.
+
+\subsection*{Embryonic development of C. elegans as an example of morphogenesis}
+\comment{Lars: Shall we have more than example? We could have another section on Drosophila}
 Lars : C Elegans : models of force transmission. how the form comes from the molecular perspective ; but only physics model.
 
 Lars: In C. elegans emergence of shape from molecular characteristics can be divided into several steps. First, in the one cell stage, there is only minimal asymmetry in the developing embryo: it is symmetric apart from the region where the sperm has entered the oocyte, which is where symmetry will broken 'properly'. This process of symmetry breaking During early development symmetry is first broken when the sperm enters the oocyte. Prior to fertilisation, any part of the oocyte could later become head or tail. After sperm entry however, the future anterior-posterior (front-rear) axis has been determined. 
 
-position of sperm entry is somewhat random, also not large-scale, needs robust amplification to allow reproducible development. achieved via mechano-chemical coupling (see previous section on reaction diffusion). This achieves full specification of the future head and tail by the two cell stage. breaking of left-right symmetry. D-V axis specified between 2 and 4 cell stage (EMS defines ventral), LR between four and six cell stage. This is mostly done by geometric constraints (??) and biochemical signalling, forces play a crucial role later on (and in one cell stage for symmetry breaking). A precisely regulated network gives rise to a completely determined cell lineage, reproducing animals with a near identical layout.
+position of sperm entry is somewhat random, also not large-scale, needs robust amplification to allow reproducible development. achieved via mechano-chemical coupling (see previous section on reaction-diffusion). This achieves full specification of the future head and tail by the two cell stage. breaking of left-right symmetry. D-V axis specified between 2 and 4 cell stage (EMS defines ventral), LR between four and six cell stage. This is mostly done by geometric constraints (??) and biochemical signalling, forces play a crucial role later on (and in one cell stage for symmetry breaking). A precisely regulated network gives rise to a completely determined cell lineage, reproducing animals with a near identical layout.
 
 %  others : qualitative description. no network stuff. rq : not necessary to have networks.
 %  fundamental idea. how does the shape control the function.
@@ -245,7 +249,7 @@ Morphogenesis has been occasionally used as a suitable metaphor to understand di
 
 In social psychology we have noteworthy illustrations like the morphogenetic approach proposed by Margaret Archer as applied to the problem of structure and agency, that is, how we both shape society and are shaped by it in a dynamic interplay \cite{archer_margaret_1999}. Thus the morphogenetic approach offers a new understanding of social change and of the subject within it.  
 
-Furthermore, its application to the field of psychoanalysis has been evoked as early as 1918 to understand the formation of psychical structures and their dynamics, the pervasive repetition of early development, and the symptom’s self-organization, or the relation to the morphogenetic qualities of drive theory \cite{benedek1973instinct}. After an extensive review on the available bibliography contained in the database Psychoanalytic Electronic Publishing, it emerges that morphogenesis has come to be mainly used after the sixties, and moreover thanks to the spreading of the ideas of René Thom on Structural Stability and Morphogenesis \cite{de_luca_picione_processes_2016}, undoubtedly thanks to Lacanian discourse and it’s movement towards topology \cite{nasio_five_1998}. 
+Furthermore, its application to the field of psychoanalysis has been evoked as early as 1918 to understand the formation of psychical structures and their dynamics, the pervasive repetition of early development, and the symptom’s self-organization, or the relation to the morphogenetic qualities of drive theory \cite{benedek_instinct_1973}. After an extensive review on the available bibliography contained in the database Psychoanalytic Electronic Publishing, it emerges that morphogenesis has come to be mainly used after the sixties, and moreover thanks to the spreading of the ideas of René Thom on Structural Stability and Morphogenesis \cite{de_luca_picione_processes_2016}, undoubtedly thanks to Lacanian discourse and it’s movement towards topology \cite{nasio_five_1998}. 
 
 Nonetheless, more than a systematic and widespread unity throughout these different fields, we encounter multiple uses that are sometimes discontinuous, and one could argue that morphogenesis’s utility could be more tangible on an epistemological level. This would consist of a shared perception of morphogenesis’s descriptive power to further understand the emergence and structure of various phenomena.
 
